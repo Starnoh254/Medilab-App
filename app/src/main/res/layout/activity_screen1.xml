@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Screen1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        >
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/skip1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:textAlignment="textEnd"
+            android:textColor="#9F9797"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Your Lab"
+        android:textAlignment="textStart"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#353232"
+        android:textStyle="bold"
+        app:fontFamily="@font/montserrat"
+        android:textSize="34sp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is professional mobile onboarding screens.this screens useing on food delivery app."
+        android:textAlignment="textStart"
+        android:layout_marginTop="10dp"
+        app:fontFamily="@font/montserrat"
+        android:layout_marginLeft="15dp"
+        android:textColor="#706E6E"
+        android:textStyle="normal"
+        android:lineHeight="20dp"
+        android:textSize="14sp"/>
+
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:src="@drawable/screen1"
+        android:padding="20dp"/>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="10dp"
+            app:backgroundTint="#3F51B5" />
+        <TextView
+            android:id="@+id/next1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Next"
+            android:elevation="6dp"
+            android:textSize="18dp"
+            android:textColor="#fff"
+            app:layout_anchor="@id/fab"
+            app:layout_anchorGravity="center"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Profile"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="bold"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jane"
+        android:textSize="14sp"
+        android:id="@+id/surname"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="normal"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mary"
+        android:textSize="14sp"
+        android:id="@+id/others"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="normal"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        android:textSize="14sp"
+        android:id="@+id/gender"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="normal"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DOB"
+        android:textSize="14sp"
+        android:id="@+id/dob"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="normal"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mary"
+        android:textSize="14sp"
+        android:id="@+id/regDate"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="normal"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mary"
+        android:textSize="14sp"
+        android:id="@+id/email"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="normal"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mary"
+        android:textSize="14sp"
+        android:id="@+id/phone"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="normal"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="50dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/labimage"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/screen1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:id="@+id/linear1"
+            android:layout_toEndOf = "@+id/labimage"
+            android:layout_marginLeft="10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lipid Profile"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/black"
+                android:id="@+id/test_name"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A medical procedure that involves testing a sample of blood, urine, or other substance from the body.A medical procedure that involves testing a sample of blood, urine, or other substance from the body.A medical procedure that involves testing a sample of blood, urine, or other substance from the body"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#787874"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:id="@+id/test_description"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/labimage"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:text="KES 1,200"
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/test_cost"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+

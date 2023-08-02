@@ -1,0 +1,161 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="50dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="8dp">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".SingleLabTest">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear1"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/labimage"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/screen1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dummy name"
+            android:fontFamily="@font/montserrat"
+            android:id="@+id/test_name"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linear1"
+        android:id="@+id/linear2">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dummy description dummy description dummy description dummy description dummy description dummy description dummy description "
+            android:fontFamily="@font/montserrat"
+            android:id="@+id/test_description"
+            android:textStyle="bold"
+            android:textSize="13dp"
+            android:lineHeight="20dp"
+            android:layout_marginBottom="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear3"
+        android:layout_below="@+id/linear2"
+        android:orientation="horizontal">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5% OFF"
+            android:padding="10dp"
+            android:id="@+id/test_discount"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat"
+            android:textSize="28dp"
+            android:textColor="#06AA54"
+            android:layout_marginBottom="5dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KES 2,300 "
+            android:id="@+id/test_cost"
+            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginBottom="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear3"
+        android:orientation="vertical"
+        android:id="@+id/linear4">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dummy id "
+            android:id="@+id/test_id"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:visibility="gone"
+            android:layout_marginBottom="5dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dummy avalilability "
+            android:id="@+id/availability"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dummy more info"
+            android:fontFamily="@font/montserrat"
+            android:id="@+id/more_info"
+            android:lineHeight="20dp"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="Add to Cart"
+            android:backgroundTint="#06AA54"
+            android:layout_margin="10dp"
+            android:id="@+id/add_cart"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear4"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="50dp"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="8dp">
+
+            <VideoView
+                android:layout_width="match_parent"
+                android:id="@+id/video1"
+                android:layout_height="match_parent"/>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+</androidx.cardview.widget.CardView>

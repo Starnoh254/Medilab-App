@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/clearcart"
+        android:title="Clear Cart"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_delete"/>
+    <item
+        android:id="@+id/backtoLabs"
+        app:showAsAction="never"
+        android:title="Back"/>
+    <item
+        android:id="@+id/login"
+        app:showAsAction="never"
+        android:title="Login"/>
+
+
+
+</menu>

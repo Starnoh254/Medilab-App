@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="50dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/labimage"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/screen1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:id="@+id/linear1"
+            android:layout_toEndOf = "@+id/labimage"
+            android:layout_marginLeft="10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lancet Pathologists"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/black"
+                android:id="@+id/lab_name"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Permit ID: 67689686"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#787874"
+                android:id="@+id/permit_id"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/labimage"
+            android:layout_marginTop="5dp"
+            android:textAlignment="center"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lancet@gmail.com"
+                android:textStyle="normal"
+                android:textSize="15sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#011C3C"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="4dp"
+                android:id="@+id/email"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
