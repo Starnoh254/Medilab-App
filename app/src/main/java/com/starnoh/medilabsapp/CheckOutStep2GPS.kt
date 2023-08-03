@@ -5,15 +5,16 @@ import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Looper
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.*
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textview.MaterialTextView
+import com.loopj.android.http.AsyncHttpClient.log
 
 class CheckOutStep2GPS : AppCompatActivity() {
     private lateinit var  editlatitude: TextInputEditText
@@ -64,16 +65,49 @@ class CheckOutStep2GPS : AppCompatActivity() {
                     editlatitude.setText(it.latitude.toString())
                     editLongitude.setText(it.longitude.toString())
                     progress.visibility  =  View.GONE
+                    requestNewLocation()
                 }?: run {
-                    Toast.makeText(applicationContext, "Location Not Found", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Searching Location", Toast.LENGTH_SHORT).show()
+                    requestNewLocation()
                 }
         }
             .addOnFailureListener { e ->
                 Toast.makeText(applicationContext, "Error $e", Toast.LENGTH_SHORT).show()
                 progress.visibility = View.GONE
+                requestNewLocation()
 
             }
     }// end getLocation()
+
+    lateinit var mLocationCallback: LocationCallback
+
+    @SuppressLint("MissingPermission")
+    fun requestNewLocation(){
+        progress.visibility = View.VISIBLE
+        log.d("hhhhhh", "Requesting New Location")
+        val mLocationRequest = LocationRequest.create()
+        mLocationRequest.interval = 10000
+        mLocationRequest.fastestInterval = 10000
+        mLocationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+
+        mLocationCallback = object : LocationCallback() {
+            override fun onLocationResult(result: LocationResult) {
+                for (location in result.locations){
+                    if (location!= null){
+                        editlatitude.setText(location.latitude.toString())
+                        editLongitude.setText(location.longitude.toString())
+                        progress.visibility = View.GONE
+                    }
+                    else{
+                        Toast.makeText(applicationContext, "Please check your location settings", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+        fusedLocationClient.requestLocationUpdates(mLocationRequest,
+        mLocationCallback, Looper.getMainLooper())
+
+    }
 
 
 }// end class

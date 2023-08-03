@@ -34,6 +34,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content"
                 app:helperTextTextColor="#F40505"
+                android:enabled="false"
                 android:hint="Latitude "
                 android:layout_marginTop="10dp">
 
@@ -54,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true"
+                android:enabled="false"
                 app:helperTextTextColor="#F80536"
                 android:hint="Longitude"
                 android:layout_marginTop="10dp">

@@ -29,7 +29,7 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     // Global Declaration - they can be accessed all over this class
-    lateinit var itemList: List<Lab>
+    var itemList: List<Lab> = mutableListOf()
     lateinit var labAdapter: LabAdapter
     lateinit var recyclerView: RecyclerView
     lateinit var progress: ProgressBar
