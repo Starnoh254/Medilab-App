@@ -3,6 +3,7 @@ package com.starnoh.medilabsapp
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
+import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
@@ -11,6 +12,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
+import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textview.MaterialTextView
@@ -23,6 +25,12 @@ class CheckOutStep2GPS : AppCompatActivity() {
     private lateinit var progress : ProgressBar
     private lateinit var skips: MaterialTextView
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+
+    fun getAddress(latlng: LatLng) : String{
+        val geoCoder = Geocoder(this)
+        val list = geoCoder.getFromLocation(latlng.latitude,latlng.longitude,1)
+        return  if(list!!.isEmpty()){""} else list!![0].getAddressLine(0)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +73,12 @@ class CheckOutStep2GPS : AppCompatActivity() {
                     editlatitude.setText(it.latitude.toString())
                     editLongitude.setText(it.longitude.toString())
                     progress.visibility  =  View.GONE
+
+                    val place = getAddress(LatLng(it.latitude,it.longitude))
+
+                    var skips = findViewById<MaterialTextView>(R.id.skips)
+                    skips.text = "Current Location is : $place"
+
                     requestNewLocation()
                 }?: run {
                     Toast.makeText(applicationContext, "Searching Location", Toast.LENGTH_SHORT).show()
@@ -108,6 +122,9 @@ class CheckOutStep2GPS : AppCompatActivity() {
         mLocationCallback, Looper.getMainLooper())
 
     }
+
+
+
 
 
 }// end class
