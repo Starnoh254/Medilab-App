@@ -109,17 +109,16 @@ class CheckOutStep2GPS : AppCompatActivity() {
         val mLocationRequest = LocationRequest.create()
         mLocationRequest.interval = 10000
         mLocationRequest.fastestInterval = 10000
-        mLocationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+            mLocationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
 
         mLocationCallback = object : LocationCallback() {
             override fun onLocationResult(result: LocationResult) {
                 for (location in result.locations){
-                    if (location!= null){
-                        editlatitude.setText(location.latitude.toString())
-                        editLongitude.setText(location.longitude.toString())
+                    location?.let {
+                        editlatitude.setText(it.latitude.toString())
+                        editLongitude.setText(it.longitude.toString())
                         progress.visibility = View.GONE
-                    }
-                    else{
+                    }?: run{
                         Toast.makeText(applicationContext, "Please check your location settings", Toast.LENGTH_SHORT).show()
                     }
                 }
