@@ -2,8 +2,10 @@ package com.starnoh.medilabsapp
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Geocoder
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
@@ -25,6 +27,8 @@ class CheckOutStep2GPS : AppCompatActivity() {
     private lateinit var progress : ProgressBar
     private lateinit var skips: MaterialTextView
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var location : MaterialButton
+
 
     fun getAddress(latlng: LatLng) : String{
         val geoCoder = Geocoder(this)
@@ -46,6 +50,10 @@ class CheckOutStep2GPS : AppCompatActivity() {
         getLocation.setOnClickListener {
             progress.visibility = View.VISIBLE
             requestLocation()
+        }
+        location = findViewById(R.id.location)
+        location.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:${editlatitude.text},${editLongitude.text}")))
         }
 
     }
@@ -76,7 +84,6 @@ class CheckOutStep2GPS : AppCompatActivity() {
 
                     val place = getAddress(LatLng(it.latitude,it.longitude))
 
-                    var skips = findViewById<MaterialTextView>(R.id.skips)
                     skips.text = "Current Location is : $place"
 
                     requestNewLocation()

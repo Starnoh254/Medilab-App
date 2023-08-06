@@ -106,6 +106,16 @@
                 android:fontFamily="@font/montserrat"
                 android:textColor="#fff"
                 android:layout_marginTop="15dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See your  Location"
+                android:id="@+id/location"
+                android:layout_gravity="end"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#fff"
+                android:layout_marginTop="15dp"/>
         </LinearLayout>
 
     </LinearLayout>
