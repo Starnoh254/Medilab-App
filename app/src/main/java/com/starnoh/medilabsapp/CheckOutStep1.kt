@@ -140,7 +140,7 @@ class CheckOutStep1 : AppCompatActivity() {
                 PrefsHelper.savePrefs(applicationContext,"date", selectedDate)
                 PrefsHelper.savePrefs(applicationContext,"time", selectedTime)
                 PrefsHelper.savePrefs(applicationContext,"where_taken", radioButton.text.toString())
-                PrefsHelper.savePrefs(applicationContext,"where_taken", radioButton2.text.toString())
+                PrefsHelper.savePrefs(applicationContext,"booked_for", radioButton2.text.toString())
 
                 if (isLocationEnabled()){
                     startActivity(Intent(applicationContext, CheckOutStep2GPS::class.java))

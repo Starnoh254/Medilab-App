@@ -19,6 +19,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textview.MaterialTextView
 import com.loopj.android.http.AsyncHttpClient.log
+import com.starnoh.medilabsapp.helpers.PrefsHelper
 
 class CheckOutStep2GPS : AppCompatActivity() {
     private lateinit var  editlatitude: TextInputEditText
@@ -28,6 +29,7 @@ class CheckOutStep2GPS : AppCompatActivity() {
     private lateinit var skips: MaterialTextView
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var location : MaterialButton
+    private lateinit var complete: MaterialButton
 
 
     fun getAddress(latlng: LatLng) : String{
@@ -55,6 +57,14 @@ class CheckOutStep2GPS : AppCompatActivity() {
         location.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("geo:${editlatitude.text},${editLongitude.text}")))
         }
+
+        complete = findViewById(R.id.complete)
+        complete.setOnClickListener {
+            PrefsHelper.savePrefs(applicationContext,"latitude", editlatitude.text.toString())
+            PrefsHelper.savePrefs(applicationContext,"longitude", editLongitude.text.toString())
+            startActivity(Intent(applicationContext,Complete::class.java))
+        }
+        // we can view the booking api in postman , to see what its body requires
 
     }
     fun requestLocation(){

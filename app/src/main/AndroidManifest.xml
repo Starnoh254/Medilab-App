@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MedilabsApp"
         tools:targetApi="31">
+        <activity
+            android:name=".Complete"
+            android:exported="false" />
         <activity
             android:name=".CheckOutStep2GPS"
             android:exported="false" />
