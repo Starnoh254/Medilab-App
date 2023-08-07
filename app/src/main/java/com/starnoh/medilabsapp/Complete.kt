@@ -31,6 +31,9 @@ class Complete : AppCompatActivity() {
         // get booked for
         val booked_for = PrefsHelper.getPrefs(this, "booked_for")
 
+        val latitude = PrefsHelper.getPrefs(this , "latitude")
+        val longitude = PrefsHelper.getPrefs(this , "longitude")
+
         val test_id = 2 // static
 
         val lab_id = 8 // static
@@ -42,21 +45,23 @@ class Complete : AppCompatActivity() {
         val helper = ApiHelper(this)
         val api = Constants.BASE_URL + "/make_booking"
         val body = JSONObject()
-        body.put("member_id", member_id)
-        body.put("where_taken",where_taken)
-        body.put("booked_for",booked_for)
-        body.put("test_id",test_id)
-        body.put("lab_id",lab_id)
-        body.put("invoice_no",invoice_no)
-        body.put("dependant_id",dependant_id)
-        body.put("appointment_date",date)
-        body.put("appointment_time",time)
+        body.put("member_id", "4")
+        body.put("where_taken","home")
+        body.put("booked_for","self")
+        body.put("test_id","2")
+        body.put("lab_id","8")
+        body.put("invoice_no","545454")
+        body.put("dependant_id","2")
+        body.put("latitude", latitude)
+        body.put("longitude", longitude)
+        body.put("appointment_date","2023-04-05")
+        body.put("appointment_time","10:35:00")
 
         helper.post(api,body,object : ApiHelper.CallBack{
             // implementing the interfaces of the callback
             // our api returns a json  object
             override fun onSuccess(result: JSONArray?) {
-
+            // will be done
             }
 
             override fun onSuccess(result: JSONObject?) {
@@ -64,7 +69,7 @@ class Complete : AppCompatActivity() {
             }
 
             override fun onFailure(result: String?) {
-
+            // will be done
             }
         })
 
