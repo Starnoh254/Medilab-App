@@ -34,7 +34,7 @@ class CheckOutStep2GPS : AppCompatActivity() {
 
     fun getAddress(latlng: LatLng) : String{
         val geoCoder = Geocoder(this)
-        val list = geoCoder.getFromLocation(latlng.latitude,latlng.longitude,1)
+          val list = geoCoder.getFromLocation(latlng.latitude,latlng.longitude,1)
         return  if(list!!.isEmpty()){""} else list!![0].getAddressLine(0)
     }
 

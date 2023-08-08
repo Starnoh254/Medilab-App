@@ -4,10 +4,13 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textview.MaterialTextView
+import com.starnoh.medilabsapp.CheckOutStep2GPS
 import com.starnoh.medilabsapp.R
 import com.starnoh.medilabsapp.SingleLabTest
+import com.starnoh.medilabsapp.helpers.PrefsHelper
 import com.starnoh.medilabsapp.models.Dependant
 import com.starnoh.medilabsapp.models.LabTests
 
@@ -41,6 +44,16 @@ class DependantAdapter (var context: Context):
         others.text = item.others
         dob.text =  item.dob
 
+        holder.itemView.setOnClickListener {
+            /// is a confirmation dialogue needed ?
+            PrefsHelper.savePrefs(context, "dependant_id", item.dependant_id)
+            val i = Intent(context, CheckOutStep2GPS::class.java)
+
+            i.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(i)
+
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -62,6 +75,26 @@ class DependantAdapter (var context: Context):
         itemList = data //map/link the data to itemList
         notifyDataSetChanged()//Tell this adapter class that now itemlist is loaded with data
     }
+
+//    fun showAlertDialog(position: Int){
+//        val item = itemList[position]
+//        val alertDialog = AlertDialog.Builder(context)
+//        alertDialog.setTitle("Confirm")
+//        alertDialog.setMessage("Are sure you picked ${item.surname}")
+//        alertDialog.setPositiveButton("Yes"){ dialog, which ->
+//            PrefsHelper.savePrefs(context, "dependant_id", item.dependant_id)
+//            val i = Intent(context, CheckOutStep2GPS::class.java)
+//
+//            i.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+//            context.startActivity(i)
+//            dialog.dismiss()
+//        }
+//        alertDialog.setNegativeButton("No"){ dialog, which ->
+//            dialog.dismiss()
+//
+//        }
+//        alertDialog.show()
+//    }
 
 
 }

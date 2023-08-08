@@ -139,11 +139,19 @@ class CheckOutStep1 : AppCompatActivity() {
             else{
                 PrefsHelper.savePrefs(applicationContext,"date", selectedDate)
                 PrefsHelper.savePrefs(applicationContext,"time", selectedTime)
-                PrefsHelper.savePrefs(applicationContext,"where_taken", radioButton.text.toString())
-                PrefsHelper.savePrefs(applicationContext,"booked_for", radioButton2.text.toString())
+                PrefsHelper.savePrefs(applicationContext,"booked_for", radioButton.text.toString())
+                PrefsHelper.savePrefs(applicationContext,"where_taken", radioButton2.text.toString())
 
                 if (isLocationEnabled()){
-                    startActivity(Intent(applicationContext, CheckOutStep2GPS::class.java))
+                    if (radioButton.text == "Self"){
+                        PrefsHelper.savePrefs(applicationContext,"dependant_id","")
+                        startActivity(Intent(applicationContext, CheckOutStep2GPS::class.java))
+                    }
+                    else{
+                        // Direct the user to pick a dependant
+                        startActivity(Intent(applicationContext, ViewDependant::class.java))
+                    }
+
                 }
                 else{
                     Toast.makeText(applicationContext, "Enable Location settings", Toast.LENGTH_SHORT).show()
